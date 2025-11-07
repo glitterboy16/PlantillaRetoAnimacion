@@ -76,7 +76,8 @@ main{
     radial-gradient(1.13em at 50% -0.8em,#0000 99%,#000 101%) 50% .8em/3.2em 100% repeat-x  text;
   animation: l9 2s linear infinite;
   position: absolute;
-  margin-bottom: 300px;
+  margin-top: 20px;
+  margin-left: 37px;
 }
 .loadertitulo:before {
   content: "Loading";
