@@ -314,7 +314,7 @@ export default function Carta() {
           </p>
         </div>
       </div>
-      {qrAbierto && <QrModal url={`${window.location.origin}/carta`} onClose={() => setQrAbierto(false)} />}
+      {qrAbierto && <QrModal url={`${window.location.origin}${import.meta.env.BASE_URL}carta`} onClose={() => setQrAbierto(false)} />}
     </>
   )
 }
