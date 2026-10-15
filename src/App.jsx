@@ -17,7 +17,7 @@ export default function App() {
           duration: 3200,
           style: {
             background: '#021E50',
-            color: '#FFFFFF',
+            color: '#FDFCF9',
             borderRadius: '999px',
             fontFamily: "'Montserrat', system-ui, sans-serif",
             fontSize: '.85rem',

@@ -81,7 +81,12 @@ function Pescado() {
           <h2>{t('pescado.titulo')}</h2>
           <Olas />
           <p>{t('pescado.intro')}</p>
-          <p className="pescado-prep">{t('pescado.preparaciones')}</p>
+          <p className="pescado-prep">
+            {/* Cada preparación se queda entera en su línea: el "·" nunca abre renglón */}
+            {t('pescado.preparaciones').split(' · ').map((prep, i, todas) => (
+              <span key={prep}>{i > 0 && ' '}<span className="nowrap">{prep}{i < todas.length - 1 && ' ·'}</span></span>
+            ))}
+          </p>
           <a className="enlace" href={contacto.telHref}>{t('pescado.apartar')}<IconoFlecha /></a>
         </div>
 
@@ -468,12 +473,14 @@ function Visita() {
               {contacto.direccion}<br />
               {contacto.direccion2}
             </address>
-            <a className="enlace" href={contacto.mapsUrl} target="_blank" rel="noopener noreferrer">
-              {t('visita.comoLlegar')}<IconoFlecha />
-            </a>
-            <a className="enlace" href={contacto.instagram} target="_blank" rel="noopener noreferrer">
-              <IconoInstagram />{contacto.instagramUser}
-            </a>
+            <div className="visita-enlaces">
+              <a className="enlace" href={contacto.mapsUrl} target="_blank" rel="noopener noreferrer">
+                {t('visita.comoLlegar')}<IconoFlecha />
+              </a>
+              <a className="enlace" href={contacto.instagram} target="_blank" rel="noopener noreferrer">
+                <IconoInstagram />{contacto.instagramUser}
+              </a>
+            </div>
           </div>
         </div>
       </div>
